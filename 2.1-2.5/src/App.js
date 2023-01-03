@@ -10,6 +10,7 @@ const Course = ({ course }) => {
 }
 
 const App = () => {
+
   const course = {
     id: 1,
     name: 'Half Stack application development',
@@ -30,9 +31,20 @@ const App = () => {
         id: 3
       }
     ]
+
   }
 
-  return <Course course={course} />
+  const total = course.parts.reduce((total, currentValue) => {
+    return total + currentValue.exercises
+  }, 0)
+
+  return (
+    <div>
+    <Course course={course} />
+    <b>total of {total} exercises</b>
+    </div>
+  )
+
 }
 
 export default App
