@@ -1,11 +1,27 @@
-import Content from './components/content'
-
 const Course = ({ course }) => {
   return (
     <div>
       <h1>{course.name}</h1>
       <Content parts={course.parts} />
     </div>
+  )
+}
+
+const Content = ({ parts }) => {
+  return (
+      <div>
+          {parts.map(part => (
+              <Part key={part.id} name={part.name} exercise={part.exercises} />
+          ))}
+      </div>
+  )
+}
+
+const Part = ({ name, exercise }) => {
+  return (
+      <p>
+          {name} {exercise}
+      </p>
   )
 }
 
