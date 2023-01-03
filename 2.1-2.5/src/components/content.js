@@ -6,7 +6,6 @@ const Content = ({ parts }) => {
             ))}
         </div>
     )
-
 }
 
 const Part = ({ name, exercise }) => {
